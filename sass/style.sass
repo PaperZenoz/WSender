@@ -1,0 +1,279 @@
+@import "resert"
+
+@import url('https://fonts.cdnfonts.com/css/segoe-ui-4')
+
+
+$white: white
+$black: black
+
+$green: #1FBEA5
+$dark_green: #0D907C
+$light_green: #25D366
+
+$dark_blue: #232F3C
+
+$dark_white: #FDFDFD
+$main_dark: #d9d9d9
+$main_light: #F6F7F8
+$main_lightest: #FDFDFD
+$dark: #656565
+
+
+body
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+  font-weight: 500
+  font-family: 'Segoe UI', sans-serif
+  line-height: 1.2
+  color: $dark
+  &::-webkit-scrollbar-track
+    border-radius: 6px
+    height: 6px
+    background: white
+
+  &::-webkit-scrollbar
+    width: 6px
+    height: 6px
+
+  &::-webkit-scrollbar-thumb
+    border-radius: 6px
+    height: 6px
+    background: $dark_green
+
+  @media screen and (max-width: 1023px)
+    font-size: 14px
+
+.content-wrapper
+  flex-grow: 1
+  min-height: 100vh
+.logo
+  font-size: 20px
+  color: #fff
+  text-transform: uppercase
+  font-weight: 700
+  strong
+    background-color: $dark_green
+    border-radius: 3px
+    margin-right: 5px
+    display: inline-block
+    height: 40px
+    line-height: 40px
+    text-align: center
+    width: 40px
+
+.btn
+  padding: 11px 24px
+  text-transform: uppercase
+  border-radius: 5px
+  border: 1px solid transparent
+  outline: none
+  color: white
+  background-color: white
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  gap: 9px
+  cursor: pointer
+  @media screen and (max-width: 1023px)
+    padding: 10px 10px
+  &--green
+    background-color: $dark_green
+  &--solid
+    background-color: $black
+  &--light
+    color: $black
+    border: 1px solid $black
+
+  &--disabled
+    color: $dark_white
+  &--big
+    height: 55px
+    width: 208px
+    @media screen and (max-width: 1023px)
+      width: 100%
+      height: 45px
+
+.container
+  max-width: 1230px
+  min-width: 320px
+  margin: 0 auto
+  padding: 0 15px
+
+.input
+  width: 100%
+  height: 47px
+  line-height: 47px
+  padding: 0 20px
+  border: 1px solid $main_dark
+  background-color: $main_lightest
+  font-family: 'Segoe UI', sans-serif
+  font-size: 16px
+  border-radius: 10px
+  @media screen and (max-width: 1023px)
+    padding: 0 5px
+
+.header
+  background-color: $green
+  position: fixed
+  left: 0
+  top: 0
+  right: 0
+  &__wrap
+    height: 92px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex-wrap: wrap
+    @media screen and (max-width: 1023px)
+      height: auto
+      padding: 15px 0px
+      gap: 15px
+
+  &__social
+    display: flex
+    align-items: center
+    gap: 12px
+    margin-right: 36px
+    @media screen and (max-width: 1023px)
+      display: none
+
+  &__right
+    display: flex
+    flex-wrap: wrap
+    @media screen and (max-width: 1023px)
+      gap: 15px
+
+.footer
+  background-color: $dark_blue
+  padding: 35px 0 28px
+  &__top
+    display: flex
+    justify-content: space-between
+    padding-bottom: 35px
+    align-items: center
+    border-bottom: 1px solid $main_dark
+    flex-wrap: wrap
+    gap: 15px
+
+  &__bottom
+    display: flex
+    flex-wrap: wrap
+    gap: 36px
+    padding-top: 20px
+    @media screen and (max-width: 1023px)
+      gap: 15px
+
+
+    span
+      color: $main_light
+
+    a
+      color: $main_lightest
+
+.enter
+  margin-top: 150px
+  padding: 40px
+  border: 1px solid $main_dark
+  border-radius: 10px
+  max-width: 560px
+  margin-bottom: 15px
+  @media screen and (max-width: 1023px)
+    padding: 15px
+  .logo
+    margin-bottom: 20px
+
+  .btn
+    width: 100%
+
+  .link
+    color: $dark_green
+  .btn--solid
+    margin-bottom: 16px
+    @media screen and (max-width: 1023px)
+      margin-bottom: 5px
+
+  .btn--light
+    margin-bottom: 24px
+  &__title
+    font-size: 36px
+    margin-bottom: 16px
+    font-weight: bold
+    @media screen and (max-width: 1023px)
+      font-size: 24px
+
+  &__subtitle
+    margin-bottom: 40px
+    @media screen and (max-width: 1023px)
+      margin-bottom: 15px
+
+  &__agreement
+    font-size: 12px
+
+.modal
+  display: none
+  &__background
+    display: block
+    position: fixed
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    background-color: rgba($black, 0.5)
+    cursor: pointer
+
+  &__window
+    max-width: 550px
+    background-color: $white
+    border-radius: 10px
+    padding: 48px 56px
+    z-index: 1
+    position: fixed
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    @media screen and (max-width: 1023px)
+      padding: 15px
+
+  &__title
+    font-size: 28px
+    margin-bottom: 8px
+    font-weight: 800
+    @media screen and (max-width: 1023px)
+      font-size: 24px
+
+  &__subtitle
+    margin-bottom: 35px
+    @media screen and (max-width: 1023px)
+      margin-bottom: 15px
+
+  .input
+    margin-top: 5px
+    margin-bottom: 35px
+    @media screen and (max-width: 1023px)
+      margin-bottom: 5px
+
+  &.open
+    display: block
+  &__buttons
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    gap: 5px
+
+    .btn--solid
+      background-color: $light_green
+
+    .btn--light
+      border: 1px solid $light_green
+      color: $light_green
+
+
+
+
+
+
+
+
+
+
